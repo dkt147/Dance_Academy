@@ -1,0 +1,44 @@
+* { Box-sizing: Border-box }
+.mycontainer{
+  white-space: nowrap;
+  overflow-x: visible;
+  width: 100%;
+}
+.box{
+  display: inline-block;
+  border: 2px black solid;
+  padding: 20px;
+  width: 200px;
+  height: 100px;
+  vertical-align: top;
+  background-color: pink;
+}
+.box2{
+  background-color: yellow;
+}
+
+.menubtn{
+    margin: 10px;
+}
+
+#container {
+    border: 1px solid #ccc;
+}  
+#posts {
+    max-width: 200Px;
+    min-height: 50px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.slideImageDiv {
+  max-width: 200Px;
+  min-height: 50px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  transition:inherit;
+}
+
+    

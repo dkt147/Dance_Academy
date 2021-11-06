@@ -1,0 +1,25 @@
+.mainTable{
+  border-collapse: separate;
+    text-indent: initial;
+    border-spacing: 30px 50px;
+    width: 100%;
+    margin-left:0%;
+  }
+  
+  .mainTable,td{
+  border: 0px;
+  align-items: baseline;
+  padding: 0;
+}
+
+  
+   
+.bottom-left {
+    position: absolute;
+    bottom: 0;
+    left:22px;
+}
+    
+
+
+

@@ -1,0 +1,48 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="reset.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark" style="color: blue;" >
+        <div class="logo1" style="margin-left :65px;margin-top:20px;"><img src="logo4.png" alt="logo" height=50px ;"></div>
+    </nav>
+    
+    <p id="underline-gap">RESET YOUR PASSWORD ?</p>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br>
+     <p style="font-size:large;text-align: center;">Check In Your Mail ! </p>
+     <p style="font-size:14px;text-align: center;">Reset Password Link Has Been Sent To Your Email ID.Please Check Your Mail Box </p>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <script>
+        $(document).ready(function(){
+             $("#login").click(function(e){
+                 $.ajax({
+                     type="POST",
+                     url="http://dance.liftup.tech/public_html/dance/API/reset.php",
+                     data:{email:$("#email").val(),
+                         pass:$("#pass").val(),
+ 
+                     },
+                     success: function(result){
+                         alert(result.d);
+                         console.log(result);
+ 
+                     }
+ 
+ 
+                 })
+ 
+             }
+     </script>

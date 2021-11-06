@@ -1,0 +1,39 @@
+.containerSlideBtn {
+	display: flex;
+	overflow: hidden;
+} 
+
+.buttonSliderCss{
+	column-gap: 40px;
+	justify-content: space-between;
+}
+
+#posts{
+	column-gap: 40px;
+	justify-content: space-between;
+}
+
+.slideImageDiv {
+	column-gap: 40px;
+	justify-content: space-between;
+	animation: leftRight linear 10s infinite ;
+}
+
+@keyframes leftRight {
+	to {
+	  left: 100%;
+	  transform: translateX(-100%);
+	  
+	}
+  }
+  .imageSlideBtn{
+	display: flex;
+	overflow: hidden;
+  }
+.posts1{
+	
+		column-gap: 40px;
+		justify-content: space-between;
+		
+	
+}

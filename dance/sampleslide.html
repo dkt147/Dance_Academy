@@ -1,0 +1,43 @@
+<!--automatic slidshow-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .marquee {
+  width: 200px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background: #ccc;
+}
+
+.inner {
+    position: relative;
+    left: -97%;
+}
+    </style>
+<script>
+    $('.marquee').marquee({
+  duplicated: true
+});
+    </script>
+
+</head>
+
+
+<body> 
+    <!-- <marquee width="40%" direction="horizotal" height="30%" style="stratvi">
+        <img src="1.png">
+        <img src="1.png">
+        <img src="1.png">
+        <img src="1.png">
+    </marquee>    -->
+    <div class="marquee">
+        <div class="inner">
+          jQuery marquee is the awesome
+        </div>
+      </div>
+</body>
+
+</body>
+</html> 

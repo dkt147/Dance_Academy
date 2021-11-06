@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+
+<div class="container mt-5 pb-5" style="background-color: #1d1d1d;">
+    <div class="row m-0 ptab" style="padding-top: 2rem;">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 ops text-center" id="acc_setting"><span
+                class="text-uppercase active_nav" style="font-size: 17px;font-weight: 500;">Account Setting</span>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 ops text-center" id="dance"><span
+                class="text-uppercase" style="font-size: 17px;font-weight: 500;">DANCE PREFRENCES<br></span></div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3 ops text-center" id="manage"><span
+                class="text-uppercase" style="font-size: 17px;font-weight: 500;">Manage subscription</span></div>
+    </div>
+    <div class="col-lg-11 mt-5 tabcontent">
+        <div class="row m-0 tc" id="s_acc_setting">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center"><img src="assets/img/enhance.jpg"
+                    class="rounded-pill img-fluid img p-1 w-50 text-center"><i
+                    class="fa fa-plus-circle text-white icon_over"></i></div>
+            <div class="col-12 col-sm-12 col-md-9 col-lg-8 col-xl-8 pl-0">
+                <h6 class="titlecolor mobilescreen_aheading" style="font-size: 17px;">ACCOUNT SETTINGS</h6>
+                <div class="row m-0 mt-5">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor">First Name</h6>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                        <h6 class="titlecolor">Last Name</h6>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0"><input type="text"
+                            placeholder="First Name" class="w-100"
+                            style="background: #333333;color: white;border: 1px solid #333333;"></div>
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6"><input type="text"
+                            placeholder="Last Name" class="w-100"
+                            style="background: #333333;color: white;border: 1px solid #333333;"></div>
+                </div>
+                <div class="row m-0 mt-3">
+                    <div class="col mt-2 pl-0"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            CHANGES</button></div>
+                </div>
+                <div class="row m-0 mt-4">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor">Email *</h6>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col-12 col-md-6 pl-0"><input type="text" placeholder="Xyz@gmail.com" class="w-100"
+                            style="background: #333333;color: white;border: 1px solid #333333;"></div>
+                </div>
+                <div class="row m-0 mt-2">
+                    <div class="col mt-3 pl-0"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            CHANGES</button></div>
+                </div>
+                <div class="row m-0 mt-5">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor">Current Password</h6>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col pl-0"><input type="text" placeholder="Password(6 + characters)"
+                            class="p-1 w-100" style="background: #333333;color: white;border: 1px solid #333333;">
+                    </div>
+                </div>
+                <div class="row m-0 mt-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor">New Password</h6>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col pl-0"><input type="text" placeholder="Password(6 + characters)"
+                            class="p-1 w-100" style="background: #333333;color: white;border: 1px solid #333333;">
+                    </div>
+                </div>
+                <div class="row m-0 mt-3">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor">Confirm Password</h6>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col pl-0"><input type="text" placeholder="Password(6 + characters)"
+                            class="p-1 w-100" style="background: #333333;color: white;border: 1px solid #333333;">
+                    </div>
+                </div>
+                <div class="row m-0 mt-2">
+                    <div class="col mt-3 pl-0"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            CHANGES</button></div>
+                </div>
+                <div class="row m-0 mt-5">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor">UserName</h6>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <div class="col pl-0"><input type="text" placeholder="UserName" class="p-1 w-100"
+                            style="background: #333333;color: white;border: 1px solid #333333;"></div>
+                </div>
+                <div class="row m-0 mt-2">
+                    <div class="col mt-3 pl-0"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            CHANGES</button></div>
+                </div>
+                <div class="row m-0 mt-3">
+                    <div class="col"><button class="btn btn-primary" type="button"
+                            style="float: right;border-radius: 20px;padding-right: 20px;padding-left: 20px;"><i
+                                class="fa fa-question mr-2"
+                                style="background-color: white;color: rgb(17,17,17);padding: 0px 5px;"></i>&nbsp;SUPPORT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 tc hide" id="s_dance">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center"><img src="assets/img/enhance.jpg"
+                    class="rounded-pill img-fluid img p-1 w-50 text-center"><i
+                    class="fa fa-plus-circle text-white icon_over"></i></div>
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 p-0">
+                <h6 class="text-uppercase titlecolor" style="font-size: 17px;">DANCE PREFERENCES</h6>
+                <div class="row m-0 mt-5">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor" style="font-size: 14px;">My Experience</h6>
+                    </div>
+                </div>
+                <div class="card" style="background-color: #2E2E2E;">
+                    <div class="card-body dpcard pl-3">
+                        <h6 class="card-title active">Beginner &nbsp;<i class="fa fa-check-circle ml-5"></i></h6>
+                        <h6 class="card-title mt-3">Intermediate <i class="fa fa-check-circle ml-5"></i>&nbsp;
+                            &nbsp;&nbsp;</h6>
+                        <h6 class="card-title mt-3">Advanced<i class="fa fa-check-circle ml-5"></i> &nbsp; &nbsp;
+                            &nbsp; &nbsp; &nbsp; &nbsp;</h6>
+                    </div>
+                </div>
+                <div class="row m-0 mt-2">
+                    <div class="col mt-4 pl-1"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            CHANGES</button></div>
+                </div>
+                <div class="row m-0 mt-5">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="text-white">My Goal</h6>
+                    </div>
+                </div>
+                <div class="card m-0" style="background-color: #2E2E2E;color: white;">
+                    <div class="card-body dpcard pl-0 pt-0">
+                        <div class="row m-0">
+                            <div class="col-12 mt-4"><span>Learn how to choreograph&nbsp;</span><i
+                                    class="fa fa-check-circle"></i></div>
+                            <div class="col-12 mt-4"><span class="mt-4">Dance In Public Confidently</span><i
+                                    class="fa fa-check-circle"></i></div>
+                            <div class="col-12 mt-4"><span>Learn basic dance foundations&nbsp;</span><i
+                                    class="fa fa-check-circle"></i></div>
+                            <div class="col-12 mt-4"><span>Learn how to Free</span><i
+                                    class="fa fa-check-circle"></i></div>
+                            <div class="col-12 active mt-4"><span>Learn how to choreograph</span><i
+                                    class="fa fa-check-circle"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0 mt-2 mb-5">
+                    <div class="col mt-4"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            CHANGES</button></div>
+                </div>
+                <div class="row m-0 mt-5">
+                    <div class="col mt-5 pr-0"><button class="btn btn-primary mt-5" type="button"
+                            style="float: right;border-radius: 20px;padding-right: 20px;padding-left: 20px;"><i
+                                class="fa fa-question mr-2"
+                                style="background-color: white;color: rgb(17,17,17);padding: 0px 5px;"></i>&nbsp;SUPPORT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row m-0 tc hide" id="s_manage">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 text-center"><img src="assets/img/enhance.jpg"
+                    class="rounded-pill img-fluid img p-1 w-50 text-center"><i
+                    class="fa fa-plus-circle text-white icon_over"></i></div>
+            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 pl-0">
+                <h6 class="text-uppercase titlecolor">MANAGE SUBSCRIPTON<br></h6>
+                <div class="row m-0 mt-5">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 pl-0">
+                        <h6 class="titlecolor" style="font-size: 14px;">My Plans</h6>
+                    </div>
+                </div>
+                <div class="card" style="background-color: #2E2E2E;color: white;">
+                    <div class="card-body">
+                        <h6 class="mb-12 titlecolor" style="font-size: 14px;">Monthly Subscription,Standard License
+                            Renewal Every Month<br><small class="form-text text-muted mt-1">Standard
+                                License<br></small><small class="form-text text-muted mt-0">Annual
+                                Commitment<br></small></h6>
+                        <h6 class="mb-12 titlecolor mt-3" style="font-size: 14px;">Plan Expires<br><small
+                                class="form-text text-muted mt-1">16 March 2021 At 10:15 Pm GMT+5:30<br></small>
+                        </h6>
+                        <h6 class="titlecolor mt-3" style="font-size: 14px;">Auto &nbsp;Renewal<br></h6>
+                    </div>
+                </div>
+                <div class="row m-0 mt-4">
+                    <div class="col pl-0"><button class="btn btn-primary theme-btn" type="button">UPDATE
+                            PLAN</button></div>
+                </div>
+                <h6 class="mt-5 titlecolor pb-1" style="font-size: 14px;">Payment Methods</h6>
+                <div class="row m-0">
+                    <div class="col-md-12 col-lg-12 m-0 p-1"
+                        style="background-color: #2e2e2e;border: 1px solid #2e2e2e;"><span class="titlecolor"
+                            style="/*background: blue;*/font-size: 14px;">Default Payments Methods<br></span></div>
+                    <div class="col-md-12 col-lg-12 m-0" style="border: 1px solid #2e2e2e;">
+                        <div class="row m-0 mt-2">
+                            <div class="col-3 col-sm-2 col-md-2 col-lg-2 col-xl-1"><img
+                                    src="assets/img/images%20(1).png" class="w-100 mt-3"></div>
+                            <div class="col-9 col-sm-10 col-md-10 col-lg-10 col-xl-11">
+                                <p class="titlecolor mt-2">MC ending in 6999<br>Expires 05/2025 &nbsp;&nbsp;<br></p>
+                                <p class="titlecolor">Delete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-0" style="margin-top: 1.8rem!important;">
+                    <div class="col pl-0"><button class="btn btn-primary theme-btn" type="button">ADD PAYMENT
+                            MEHOD</button></div>
+                </div>
+                <div class="row m-0 mt-5">
+                    <div class="col mt-5 pr-0"><button class="btn btn-primary mt-5" type="button"
+                            style="float: right;border-radius: 20px;padding-right: 20px;padding-left: 20px;"><i
+                                class="fa fa-question mr-2"
+                                style="background-color: white;color: rgb(17,17,17);padding: 0px 5px;"></i>&nbsp;SUPPORT</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

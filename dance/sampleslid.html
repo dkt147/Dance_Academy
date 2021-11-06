@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+        <title></title>
+        <style type="text/css">
+            #imgCont img {
+                display: none;
+            }
+            #linksCont a {
+                display: block;
+            }
+        </style>
+        <script type="text/javascript">
+            function hideChildElements(elemID){
+                var childElems = document.getElementById(elemID).childNodes;
+                for(var i=0; i<childElems.length; i++){
+                    if(childElems[i].nodeType == 1){
+                        childElems[i].style.display = 'none';
+                    }
+                }
+            }
+            function swapImage(dirn){
+                curImg += dirn;
+                if(curImg < 0){
+                    curImg = imgsO.length-1;
+                } else if(curImg == imgsO.length){
+                    curImg = 0;
+                }
+                unhideElement();
+            }
+            function unhideElement(){
+                hideChildElements('imgCont');
+                imgsO[curImg].style.display = 'block';
+            }
+            window.onload=function(){
+                curImg = 0;
+                imgsO = document.getElementById('imgCont').getElementsByTagName('img');
+                imgsO[curImg].style.display = 'block';
+                document.getElementById('btnNext').onclick=function(){swapImage(1);}
+                document.getElementById('btnPrev').onclick=function(){swapImage(-1);}
+                var divLinksO = document.getElementById('linksCont').getElementsByTagName('a');
+                for(var i=0; i<divLinksO.length; i++){
+                    divLinksO[i].num = i;
+                    divLinksO[i].onclick=function(){
+                        curImg = this.num;
+                        unhideElement();
+                        return false;
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="imgCont">
+            <img src="1.png" alt="" />
+            <img src="2.png" alt="" />
+            <img src="1.png" alt="" />
+            <img src="1.png" alt="" />
+            <img src="1.png" alt="" />
+        </div>
+        <div>
+            <button id="btnPrev">Prev</button><button id="btnNext">Next</button>
+        </div>
+        <div id="linksCont">
+            <a href="">Show Image 1</a>
+            <a href="">Show Image 2</a>
+            <a href="">Show Image 3</a>
+            <a href="">Show Image 4</a>
+            <a href="">Show Image 5</a>
+        </div>
+    </body>
+</html>

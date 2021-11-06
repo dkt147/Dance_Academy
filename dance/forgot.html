@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="forgot.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+<body>
+    <br>
+    <nav  class="navbar navbar-expand-lg navbar-dark bg-dark" style="color: blue;" >
+        <div class="logo1" style="margin-left :65px;margin-top:20px;"><img src="logo4.png" alt="logo" height=50px ;"></div>
+    </nav>
+    <br>
+    
+    <p id="underline-gap">FORGOT YOUR PASSWORD?</p>
+    <br><br><br>
+    <div class="container">
+        <p style="font-size: small;font-family: 'Montserrat';">Enter your registered mail address and we'll send you a link for reset the password. </p>
+        <br>
+        <form action="" method="post">
+            <div class="form-group">
+            <label for="email" style="font-size: small;margin-left: 70px;">Email Address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email">
+            <p id="errEmail" class="errormessage"style="font-size: small;margin-left: 70px;">Please Enter Email</p>
+        </div><br>
+        </form>
+        <button  class="btn" onclick="forget();"id="reset"style="padding-right:40px;padding-left: 40px;">RESET</button>
+        <button  class="btn" onclick="location.href='login_screen.html'" id="cancle "style="padding-left:30px;padding-right:30px;">CANCEL</button><br><br>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+      <script>
+          function validateInputs() {
+            var email = document.getElementById("email").value;
+            if(email == '') {
+                document.getElementById("errEmail").style.display = "block";
+                return ;
+            }
+            return true;
+        }
+        function forget(){
+            
+            if(validateInputs()) {
+                var email = document.getElementById('email').value;
+                var data = '{"email":"'+email+'"}';
+
+                $.ajax({
+                method: "POST",
+                url: "http://dance.liftup.tech/API/forget.php",
+                data:  data,
+                dataType: 'application/json', 
+                error: function(jqXHR, textStatus, errorThrown) {
+                    
+                    if(jqXHR.status == 200) {
+                        window.location.href="reset.html";
+                    }
+                    else{
+                        alert("Invalid Email ");
+                    }
+                }
+            });
+            }
+           
+        }
+      </script>
+</body>
+</html>

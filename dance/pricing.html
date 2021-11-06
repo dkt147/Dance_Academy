@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="pricing.css">
+    <link rel="stylesheet" href="front.css">
+    <link rel="stylesheet" href="dancepre.css">
+    <link rel="stylesheet" href="menuslider.css"> 
+    <link rel="stylesheet" href="slidemenu.css">
+    <script src="menuslider.js"></script>
+</head>
+<body>
+        <br>
+
+        <div style="margin-left: 140px;">
+                <h2 style="font-family:'Montserrat'; padding-left:50px ;">PRICING</h2>
+        </div>
+        
+        <br><br>
+        <div class="container"></div>
+        <div class="flex" style=" background-color: black;width: 81%;margin-left: 150px;border-radius: 10px;">
+              <div  onmouseover="cardHoverFun('0', 'blue')" onmouseleave="cardHoverFun('0', 'black')"   class="card mb-4 shadow-sm" style="background-color: black; border-color: white; border-radius: 10px;border: 4px solid white;height:100%">
+                    <div  class="card-header" style="padding-right: 0 ;padding-top: 20px;border-radius: 10px ;margin-top:0px;">
+                        
+                        <h4 class="my-0 font-weight-normal" style="font-size: 25px; padding-top: 10px;">7 DAYS <br> FREE TRIAL</h4>
+                        <br>
+                    
+                    </div>
+                    <div class="card-body" style="padding-bottom:0px;">
+                    
+                        <ul class="list-unstyled mt-3 mb-4" style="font-size: small;">
+                            <li style="pointer-events: none;">Access to all Videos 30 sec</li>
+                            <li style="pointer-events: none;margin-top: 10px;text-decoration: none;">Access to all Beginners videos</li>
+                            
+                        </ul><br>
+                       
+                        <a href=""
+                         type="button" onclick="payment('12')" id="payment0" class="pricingbtn" 
+                        style="text-decoration: none;margin-top: 5px;margin-bottom: 20px;" >TRY FREE TRIAL
+                         </a><br>
+                        <img src=" p1.png" alt="" width="100" height="155" style="margin-top: 5px;">
+                    
+                    </div>
+        </div>
+        <div class="flex" onmouseover="cardHoverFun('1', 'blue')" onmouseleave="cardHoverFun('1', 'black')"  class="card mb-4 shadow-sm" style="background-color: black; border-color: white; border-radius: 10px;border: 4px solid white;">
+                    <div class="card-header" id="cardMonthly"  style="border-radius: 9px;">
+                        <table style="width: 100%;border:0;">
+                            <tr>
+                                <td style="padding-right: 0;">
+                                    <h4 class="my-0 font-weight-normal" style="font-size: 25px; margin-left:20px;padding-top: 10px;padding-right: 0px;padding-left: 40px;float: right;"><b>699/- </b></h4>
+                                </td>
+                            
+                            <td rowspan="2">
+                                <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;padding-left: 10px;padding-right: 40px;float: left;">MONTHLY</h4>
+    
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td style="padding-right: 0;">
+                                <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;padding-right: 0px;padding-left: 40px;float: right;"><strike>1299/-</strike></h4>
+    
+                            </td>
+                        </tr>
+                        </table>
+                    
+                    </div>
+            
+                    <div class="card-body" style="padding-bottom: 0px;padding-top: 0;">
+                        <ul class="list-unstyled mt-3 mb-4" style="font-size: small;">
+                            <li style="margin-bottom: 10px;pointer-events: none;">Access to all Videos</li>
+                            <li style="margin-bottom: 10px;pointer-events: none;">Access to all Levels videos</li>
+                            <li style="pointer-events: none;">Access to post your videos as Instructor</li>
+                        </ul>
+                        <a href="signup.html"
+                         type="button" onclick="payment(13)" id="payment" class="pricingbtn"
+                        style="text-decoration: none;margin-top: 15px;margin-bottom: 25px;" >
+                        JOIN NOW </a><br>
+                        <img src=" p2.png" alt="" width="130" height="160" >
+                        </div>
+        </div>
+        <div class="flex" onmouseover="cardHoverFun('2', 'blue')" onmouseleave="cardHoverFun('2', 'black')" class="card mb-4 shadow-sm" style="background-color: black; border-color:white; border-radius: 10px;border: 4px solid white;">
+                <div class="card-header" style="border-radius: 10px;">
+                    <table class="pricingtable" style="width: 100%;border:0;">
+                        <tr>
+                            <td style="padding-right: 0;">
+                                <h4 class="my-0 font-weight-normal"  style="font-size: 25px;margin-left:20px;float: right; padding-top: 10px;padding-right: 0px;padding-left: 40px;"><b>1800/- </b></h4>
+                            </td>
+                        
+                        <td rowspan="2">
+                            <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;float: left;padding-left: 20px;">3 MONTHS</h4>
+    
+                        </td>
+                    </tr>
+            
+                    <tr>
+                        <td style="padding-right: 0;">
+                            <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;float:right;padding-left: 40px;"><strike>2100/-</strike></h4>
+    
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+               
+                <div class="card-body" style="padding-bottom: 0px;padding-top: 0px;">
+                    <ul class="list-unstyled mt-3 mb-4" style="font-size: small;;">
+                        <li style="margin-bottom: 10px;pointer-events: none;">Access to all Videos</li>
+                        <li style="margin-bottom: 10px;pointer-events: none;">Access to all Levels videos</li>
+                        <li style="pointer-events: none;">Access to post your videos as Instructor</li>
+                      </ul>
+                      <a href="signup.html"
+                         type="button" onclick="payment(14)" id="payment2" class="pricingbtn"
+                        style="text-decoration: none;margin-top: 15px;margin-bottom: 25px;" >
+                        JOIN NOW </a><br>
+                      <img src=" p3.png" alt="" width="150" height="160" >
+                    </div>
+              </div>
+            </div>
+            <br>
+            <br>
+       </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>front</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="menuslider.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="dancepre.css">
+    <link rel="stylesheet" href="front.css">
+    <link rel="stylesheet" href="pricing.css">
+    <link rel="stylesheet" href="menuslider.css"> 
+    <link rel="stylesheet" href="slidemenu.css">
+    
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script>
+
+    $(document).ready(function () {  
+         $.ajax({  
+             type: "GET",  
+             url: 'http://dance.liftup.tech/API/home/slider.php',  
+             dataType: 'JSON',
+             success: function(response){
+                for(var i=0; i<response.length; i++){
+                    var vid = document.
+                    ("verticalImage"+i);
+                    vid.src = response[i].vurl;
+                }
+             }
+              
+         });  
+     }); 
+
+
+    function changecolor(element, tickid){
+        var x = document.getElementById(tickid);
+        if (element.style.color=='white'){
+            element.style.color="grey";
+            x.style.display = "none";
+        }else{
+            element.style.color='white';
+            x.style.display = "inline";
+        }
+    }
+
+    function colorchanger(ele, tickid){
+        var x = document.getElementById(tickid);
+        if(ele.style.color=='white'){
+            ele.style.color="grey";
+            x.style.display ="none";
+
+        }else{
+            ele.style.color="white";
+            x.style.display = "inline";
+        }
+
+    }
+    function payment(transid) {
+        var x=window.sessionStorage.getItem('signup');
+        
+        if (x=="true"){
+            var email = window.sessionStorage.getItem('email');
+            var pass = window.sessionStorage.getItem('pass');
+            var membership = window.sessionStorage.getItem('membership');
+            var goal = window.sessionStorage.getItem('goal');
+            var transid = 0;
+            var payed = 0;
+            
+            var data = '{"email":"'+email+'", "pass":"'+pass+'" , "membership":"'+membership+'", "goal":"'+goal+'", "transid":"'+transid+'", "payed":"'+payed+'"}';
+
+            $.ajax({
+                method: "POST",
+                url: "http://dance.liftup.tech/API/register.php",
+                data:  data,
+                dataType: 'application/json', 
+                error: function(jqXHR, textStatus, errorThrown) {
+                    
+                    if(jqXHR.status == 200) {
+                        alert("Successfully Registered.");
+                        window.location.href="login_screen.html";
+                    }
+                    else{
+                        alert("Unsuccessfully Registered.");
+                    }
+                }
+            });
+
+
+        }
+        else{
+            window.location.href="signup.php";
+        }
+    }
+
+    
+    </script>
+</head>
+<body >
+
+   <div class="bannerdiv" >
+    <div class="text-area">
+     <nav  class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-bottom: 0cm; margin-left:45px;padding-top: 20px;">
+        <div class="logo1" style="margin-left :65px;;"><img src="logo4.png" alt="logo" height="50px ;"></div>
+        <div class="collapse navbar-collapse" id="navbarText" style="margin-left: 50px;font-size:12px;">
+            <ul class="navbar-nav mr-auto" >
+                <li class="nav-item active">
+                <a class="nav-link" href="#home"   >HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#featues" style="margin-left:40px;">FEATURES</a> <br> <br>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#styles"style="margin-left:40px;">STYLES</a> <br> <br>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#instructor"style="margin-left:40px;">INSTRUCTOR</a> <br> <br>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#showcase"style="margin-left:40px;">SHOWCASE</a> <br> <br>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pricing" style="margin-left:40px;">PRICING</a> <br> <br>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#workshop"style="margin-left:40px;">WORKSHOP</a> <br> <br>
+                </li>
+            </ul>
+            <nav  style="margin-bottom:20px ;margin-right: 40px;">
+                <img src="bell1.png"  width="20"
+                height="20" >
+            </nav>
+            <nav  style="margin-bottom:20px ;margin-right: 30px;">
+                <img src="search.png"  width="20"
+                height="20" >
+            </nav>
+            <nav  style="margin-bottom:20px ;margin-right: 30px;">
+                <button onclick="location.href='login_screen.html'" class="navbutton" style="background-color:transparent;border-color: white; color: white;font-size: small;">LOGIN</button>
+            </nav>
+            <nav  style="margin-bottom:20px ;margin-right:110px;">
+                <button onclick="location.href='signup.php'" class="navbutton"  style="background-color:transparent ;border-color: white; color: white;font-size: small;">SIGN UP</button>
+            </nav>
+          </div>
+         </nav>  
+   
+     
+
+      <br>
+      
+      <div class="bottom-left" style="float: left;margin-top: 180px;padding-left: 120px;">
+       <p style="font-size:100px;">Let's Dance<br>And Learn</p>
+      </div>
+      
+        <div class="bottom-right"> 
+            <!---->
+            <!-- <section class="verticalImageSection" id="verticalImageSection" style="width: 30%; border: 0;margin-left: 20px;"> -->
+                <div id="verticalImageSection" >
+                    <table class="homeTable" style="padding-right:0px;margin-right: 0;">
+                        <tr style="width: 80%;">
+                            <td style="padding-bottom:-10px;padding-right: 40px;">
+                                <video width="250" height="150" id="verticalImage2" class=" mt-3" controls>
+                                    <source src="" type="video/mp4">
+                                  </video>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td style="padding-bottom:-10px;padding-right: 40px;">
+                                <video width="250" height="150" id="verticalImage1" class=" mt-3"  controls>
+                                    <source src="" type="video/mp4">
+                                  </video>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom:-10px;padding-right: 40px;">
+                                <video width="250" height="150" id="verticalImage0" class=" mt-3"  controls>
+                                    <source src="" type="video/mp4">
+                                  </video>
+                            </td>
+                        </tr>
+                        
+                    </table>  
+                 </div>
+            <!-- </section>     -->
+        </div>
+    
+    <div class="bottom-right" style="width:50px;height:100px;margin-right:-20px;padding-left: 0;"> 
+        <input id="rangeSlider" type="range" orient="vertical" min="0" max="2" oninput="verticalImageSlides(this.value)"/>
+        
+      </div>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<main id="main" style="width: 100%;margin-left: 10px;">
+
+
+  <div class="container" style="max-width: 81%;">
+        <div class="section-title">
+                <h2 style="font-family:'Montserrat'; padding-left:50px ;">LEARN AS PER YOUR LEVEL OF DANCING</h2>
+            </div><br><br>
+
+            <div class="card1 mb-3" style="color: white; background-color: rgb(31,30,30);">
+                <div class="row ">
+                    <div class="col-sm-5 col-xl-7 align-self-center">
+                        <div class="card-body" style="padding-left: 45px;margin-bottom: 10px;">
+                            <h5 class="card-title">BEGINNER</h5>
+                            <p class="card-text" style="font-size: 20px;font-family: 'Montserrat';color:darkgrey;">A beginner dance is a learning steps. You will likely to dance with same instructor
+                                as per your level of dance</p>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xl-2 text-center mb-2 align-self-center">
+                        <a href="signup.html" class="btn  btn_cus text-center text-white p-2 w-75" >JOIN</a>
+                    </div>
+
+                    <div class="col-sm-4 col-xl-3" style="padding:0px;">
+                        <img class="card-img" src="5.png"><span  class="brows_type">BEGINNER</span>
+                        
+                    </div>
+                </div>
+            </div><br>
+            <div class="card1 mb-3 " style="color: white; background-color: rgb(31,30,30);">
+                <div class="row " style="height:15S0px;">
+                    <div class="col-sm-5 col-xl-7 align-self-center ">
+                        <div class="card-body" style="padding-left: 45px;margin-bottom: 10px;">
+                            <h5 class="card-title">INTERMEDIATE</h5>
+                            <p class="card-text" style="font-size: 20px;font-family: 'Montserrat';color:darkgrey;">A biginner dance is a learning steps. You will likely to dance with same instructor
+                                as per your level of dance</p>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xl-2 text-center mb-2 align-self-center">
+                        <a href="signup.php" class="btn  btn_cus text-center text-white  p-2 w-75">JOIN</a>
+                    </div>
+                    <div class="col-sm-4 col-xl-3" style="padding:0px;">
+                        <img class="card-img" src="1.png" height="100%"><span  class="brows_type">INTERMEDIATE</span>
+                        
+                    </div>
+                </div>
+            </div><br>
+            <div class="card1 mb-3" style="color: white; background-color: rgb(31,30,30);">
+                <div class="row " >
+                    <div class="col-sm-5 col-xl-7 align-self-center">
+                        <div class="card-body" style="padding-left: 45px;margin-bottom: 10px;">
+                            <h5 class="card-title">ADVANCE</h5>
+                            <p class="card-text" style="font-size: 20px;font-family: 'Montserrat';color:darkgrey;">A biginner dance is a learning steps. You will likely to dance with same instructor
+                                as per your level of dance</p>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xl-2 text-center mb-2 align-self-center">
+                        <a href="signup.php" class="btn  btn_cus text-center text-white  p-2 w-75">JOIN</a>
+                    </div>
+
+                    <div class="col-sm-4 col-xl-3" style="padding:0px;">
+                        <img class="card-img" src="2.png"><span  class="brows_type">ADVANCE</span>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<br><br>
+
+    <section id="fetures" class="counts ucard">
+        <div class="container" style="max-width: 81%;">
+            <div class="section-title">
+                <h2 style="font-family:'Montserrat'; padding-left:50px ;">UNIQUE FEATURES</h2>
+            </div>
+            <br><br>
+            <div class="card2 mb-3 ucard" style="border:0px;height: 160px;background-color: rgb(31,30,30);">
+            
+                <div class="row" id="row" style="background-color:rgb(31,30,30); width:100%; margin-left: 1px;">
+                    <div class="col-sm-4 col-xl-3"style="margin-right:0;padding:0; width=30%;">
+                        <img class="card-img" src="workshop.png"  >
+                    </div>
+                    <div class="col-sm-8 col-xl-9 pl-5 align-self-center"style="width: 100%;padding-left:0;">
+                        <div class="card-body " style="background-color:rgb(31,30,30);width: 100%;padding-left: 40px;">
+                            <h5 class="card-title mb-2">BE A INSTRUCTOR</h5>
+                            <p class="card-text" style="font-size: 20px;font-family: 'Montserrat';color:darkgrey;">Our most frequent user will be given to showcase & teach your</br> choreography and
+                                much
+                                more hampers.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div><br>
+            <div class="card2 mb-3 ucard" style="border:0px;height: 160px;margin-top:15px;background-color: rgb(31,30,30);">
+                <div class="row " style="background-color:rgb(31,30,30); width:100%; margin-left:1px;">
+                    <div class="col-sm-8 col-xl-9 pl-5 align-self-center">
+                        <div class="card-body ">
+                            <h5 class="card-title mb-2" style="background-color:rgb(31,30,30);width: 100%;padding-left: 40px;">SPEED CONTROL</h5>
+                            <p class="card-text" style="font-size: 20px;font-family:'Montserrat';padding-left: 40px;color:darkgrey;">You can increase or descrise speed of tutorials, as per</br> your convenience.</p>
+
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xl-3" style="margin-left:0;padding-right:0; width:30%;">
+                        <img class="card-img" src="Component2.png">
+                    </div>
+                </div>
+            </div><br>
+            <div class="card2 ucard" style="border:0px;height: 160px;margin-top: 8px;background-color: rgb(31,30,30);">
+                <div class="row "style="background-color:rgb(31,30,30); width:100%; margin-left:1px;">
+                    <div class="col-sm-4 col-xl-3" style="margin-right:0;padding-left:0; width:30%;">
+                        <img class="card-img" src="Component3.png">
+                    </div>
+                    <div class="col-sm-8 pl-5 col-xl-9 align-self-center">
+                        <div class="card-body "style="background-color:rgb(31,30,30);width: 100%;padding-left: 40px;">
+                            <h5 class="card-title mb-2">SECTION CONTROL</h5>
+                            <p class="card-text" style="font-size: 20px;font-family: 'Montserrat';color:darkgrey;">You can select the choreography sections as per</br> your convenience.</p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section><br><br><br><br>
+
+    <div>
+        <section  class="counts ucard">
+            <div class="container">
+                <div class="section-title">
+                    <h2 style="font-family:'Montserrat'; padding-left:50px ;">DANCE STYLE</h2>
+                </div>
+            </div>
+        </section><br><br>
+         
+        <div class="d-flex flex-row bd-highlight mb-3"style="margin-left: 130px;">
+            <table style=" width: 93%; border: 0;">
+                <tr>
+                    <td style="width: 2%; ">
+                          <img src="leftarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('left','danceStyleSlide')">  
+                    </td>
+                    <td style="width: 96%; ">
+                        <section class="containerSlideBtn" id="danceStyleSlide" style="width: 96%; border: 0;margin-left: 20px;">
+                            <div id="posts">
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">All</button>
+                                <button type="submit" class="slidebtn" onclick="menuselected(this)">Hip Hop</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Hip Hop</button>
+                                <button type="submit" class="slidebtn" onclick="menuselected(this)">Bollywood</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Dance Hall</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Old School</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Whacking</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Breaking</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Dance Hall</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Old School</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Whacking</button>
+                                <button type="submit"  class="slidebtn" onclick="menuselected(this)">Breaking</button>
+                            </div>
+                          </section>
+                    </td>
+                    <td style="width: 2%; ">
+                        <img src="rightarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('right','danceStyleSlide')">  
+                    </td>
+                </tr>    
+            </table>
+    
+        </div>
+    
+      
+        
+            
+        <!-- <div style="height: 230px; background-color: #121212;"></div>
+        <div class="row m-0" style="background-color: rgba(17, 17, 17, 0.9);">
+            <div class="col-12">
+                <a class="btn pull-right mr-5" role="button" href="" style="color: white;z-index: 9999999;text-decoration: none;">View
+                    All</a>
+            </div>
+        </div> -->
+    </div>
+    <br>
+
+
+    
+   
+
+    
+    
+    <table class="imgtable" style=" width: 100%; border: 0; margin-left: 10px; margin-right: 10px;">
+        <tr>
+            <td style="width: 2%; ">
+                <img src="leftarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('left','danceStyleImageSlide')">  
+          </td>
+          <td style="width: 96%; ">
+              <section class="containerSlideBtn" id="danceStyleImageSlide" style="width: 96%; border: 0;margin-left: 20px;">
+                  <div id="posts">
+                    <img src="1.png"  class="slidebtn1" >
+                    <img src="2.png"  class="slidebtn1" >
+                    <img src="1.png"  class="slidebtn1" >
+                    <img src="5.png"  class="slidebtn1" >
+                    <img src="1.png"  class="slidebtn1" >
+                    <img src="dance.png"  class="slidebtn1" >
+                    <img src="5.png"  class="slidebtn1" >
+                    <img src="2.png"  class="slidebtn1" >
+                    <img src="1.png"  class="slidebtn1" >
+                    <img src="5.png"  class="slidebtn1" >
+                  </div>
+                </section>
+          </td>
+          <td style="width: 2%; ">
+              <img src="rightarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('right','danceStyleImageSlide')">  
+          </td>
+        </tr> <br>
+        <!-- <tr >
+            <td>
+            <p  onclick="slidemeu1('right')" style = "float: right;margin-right: 0px;margin-top:20px;color:white" >VIEW ALL</p>  
+        </td> -->
+        </tr><br>
+        <tr >
+            <td colspan="3">
+                <br>
+                <a  role="button" href="signup.html" 
+                style="margin-left:85%;margin-top:20px;color:white;text-decoration: none;">View
+                        All</a>
+                </td> 
+        </tr>
+          
+    </table>
+  <br>
+  <div>
+  <section  class="counts ucard">
+    <div class="container">
+        <div class="section-title">
+            <h2 style="font-family:'Montserrat'; padding-left:50px ;">INSTRUCTORS</h2>
+        </div>
+    </div>
+</section><br><br>
+<div class="d-flex flex-row bd-highlight mb-3"style="margin-left: 130px;">
+    <table style=" width: 93%; border: 0;">
+        <tr>
+            <td style="width: 2%; ">
+                  <img src="leftarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('left','instructorSlidebutton')">  
+            </td>
+            <td style="width: 96%; ">
+                <section id="instructorSlidebutton" class="containerSlideBtn" style="width: 96%; border: 0;margin-left: 20px;">
+                    <div id="posts">
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">All</button>
+                        <button type="submit" class="slidebtn" onclick="menuselected(this)">Harshita Gautam</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Sagar Bora</button>
+                        <button type="submit" class="slidebtn" onclick="menuselected(this)">Alex Badad</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Kartik Raja</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Akshata</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Chandi</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Alex</button>
+                        
+                    </div>
+                  </section>
+            </td>
+            <td style="width: 2%; ">
+                <img src="rightarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('right','instructorSlidebutton')">  
+            </td>
+        </tr> 
+      
+        
+    </table>
+
+</div>
+
+
+
+    
+<!-- <div style="height: 230px; background-color: #121212;"></div>
+<div class="row m-0" style="background-color: rgba(17, 17, 17, 0.9);">
+    <div class="col-12">
+        <a class="btn pull-right mr-5" role="button" href="" style="color: white;z-index: 9999999;text-decoration: none;">View
+            All</a>
+    </div>
+</div> -->
+</div>
+<br>
+<table class="imgtable" style=" width: 100%; border: 0; margin-left: 10px; margin-right: 10px;">
+    <tr>
+        <td style="width: 2%; ">
+            <img src="leftarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('left','instructorImageSlide')">  
+      </td>
+      <td style="width: 96%; ">
+          <section class="containerSlideBtn" id="instructorImageSlide" style="width: 96%; border: 0;margin-left: 20px;">
+              <div id="posts">
+                <img src="1.png"  class="slidebtn1" >
+                <img src="2.png"  class="slidebtn1" >
+                <img src="1.png"  class="slidebtn1" >
+                <img src="5.png"  class="slidebtn1" >
+                <img src="1.png"  class="slidebtn1" >
+                <img src="dance.png"  class="slidebtn1" >
+                <img src="5.png"  class="slidebtn1" >
+                <img src="2.png"  class="slidebtn1" >
+                <img src="1.png"  class="slidebtn1" >
+                <img src="5.png"  class="slidebtn1" >
+              </div>
+            </section>
+      </td>
+      <td style="width: 2%; ">
+          <img src="rightarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('right','instructorImageSlide')">  
+      </td>
+    </tr> <br>
+    <!-- <tr >
+        <td>
+        <p  onclick="slidemeu1('right')" style = "float: right;margin-right: 0px;margin-top:20px;color:white" >VIEW ALL</p>  
+    </td> -->
+    </tr>
+    <tr >
+        <td colspan="3">
+            <a  role="button" href="signup.html" 
+            style="margin-left:85%;margin-top:20px;color:white;text-decoration: none;">View
+                    All</a>
+
+       
+    </td> 
+    </tr>
+      
+</table><br><br><br>
+<div>
+    <section  class="counts ucard">
+      <div class="container">
+          <div class="section-title">
+              <h2 style="font-family:'Montserrat'; padding-left:50px ;">STUDENTS SHOWCASE</h2>
+          </div>
+      </div>
+  </section><br><br>
+  <div class="d-flex flex-row bd-highlight mb-3"style="margin-left: 130px;">
+      <table style=" width: 93%; border: 0;">
+          <tr>
+              <td style="width: 2%; ">
+                    <img src="leftarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('left','showcaseSlideButton')">  
+              </td>
+              <td style="width: 96%; ">
+                  <section id="showcaseSlideButton" class="containerSlideBtn" style="width: 96%; border: 0;margin-left: 20px;">
+                      <div id="posts">
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">All</button>
+                        <button type="submit" class="slidebtn" onclick="menuselected(this)">Harshita Gautam</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Sagar Bora</button>
+                        <button type="submit" class="slidebtn" onclick="menuselected(this)">Alex Badad</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Kartik Raja</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Akshata</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Chandi</button>
+                        <button type="submit"  class="slidebtn" onclick="menuselected(this)">Alex</button>
+                      </div>
+                    </section>
+              </td>
+              <td style="width: 2%; ">
+                  <img src="rightarrow.png" style="width: 20px; height: 20px;" onclick="slidemeu('right','showcaseSlideButton')">  
+              </td>
+          </tr>    
+      </table>
+  
+  </div>
+  
+  
+  
+      
+  <!-- <div style="height: 230px; background-color: #121212;"></div>
+  <div class="row m-0" style="background-color: rgba(17, 17, 17, 0.9);">
+      <div class="col-12">
+          <a class="btn pull-right mr-5" role="button" href="" style="color: white;z-index: 9999999;text-decoration: none;">View
+              All</a>
+      </div>
+  </div> -->
+  </div>
+  <br>
+  <table class="imgtable" style=" width: 100%; border: 0; ">
+    <tr>
+        
+      <td style="width: 100%; ">
+          <section class="containerSlideBtn" id="showcaseImageSlide" style="width: 100%; height: 80%; border: 0;margin-left: 20px;">
+            <img src="leftarrow.png" style="width: 20px; height: 20px;position:absolute;margin-top:140px;" onclick="slidemeu('left','showcaseImageSlide')">   
+            <div id="posts" >
+                  
+                <img src="1.png"  class="slidebtn1" >
+                <img src="2.png"  class="slidebtn1" >
+                <img src="1.png"  class="slidebtn1" >
+                <img src="5.png"  class="slidebtn1" >
+                <img src="1.png"  class="slidebtn1" >
+                <img src="dance.png"  class="slidebtn1" >
+                <img src="5.png"  class="slidebtn1" >
+                <img src="2.png"  class="slidebtn1" >
+                <img src="1.png"  class="slidebtn1" >
+                <img src="5.png"  class="slidebtn1" >
+                <img src="rightarrow.png" style="width: 20px; height: 20px;position:fixed;" onclick="slidemeu('right','showcaseImageSlide')">
+              </div>
+              
+            </section>
+            <img src="rightarrow.png" style="width: 20px; height: 20px;float:right;margin-top:-150px;" onclick="slidemeu('right','showcaseImageSlide')">
+      </td>
+      
+    </tr> <br>
+    <tr >
+        <td><br>
+            <a  role="button" href="signup.html" 
+                style="margin-left:85%;margin-top:20px;color:white;text-decoration: none;">View
+                        All</a>
+
+       
+    </td> 
+    </tr>
+      
+</table>
+
+
+
+
+<br><br><br>
+<section  class="counts ucard">
+    <div class="container" id="pricing">
+        <div class="section-title">
+            <h2 style="font-family:'Montserrat'; padding-left:50px ;">PRICING</h2>
+        </div>
+    </div>
+</section><br><br>
+ 
+        <div class="card-deck mb-3 text-center" style="background-color: black;width: 81%;margin-left: 150px;border-radius: 10px;">
+          <div  onmouseover="cardHoverFun('0', 'blue')" onmouseleave="cardHoverFun('0', 'black')"   class="card mb-4 shadow-sm" style="background-color: black; border-color: white; border-radius: 10px;border: 4px solid white;height:100%">
+                <div  class="card-header" style="padding-right: 0 ;padding-top: 20px;border-radius: 10px ;margin-top:0px;">
+                    
+                    <h4 class="my-0 font-weight-normal" style="font-size: 25px; padding-top: 10px;">7 DAYS <br> FREE TRIAL</h4>
+                    <br>
+                
+                </div>
+                <div class="card-body" style="padding-bottom:0px;">
+                
+                    <ul class="list-unstyled mt-3 mb-4" style="font-size: small;">
+                        <li style="pointer-events: none;">Access to all Videos 30 sec</li>
+                        <li style="pointer-events: none;margin-top: 10px;text-decoration: none;">Access to all Beginners videos</li>
+                        
+                    </ul><br>
+                   
+                    <a href="#"
+                     type="button" onclick="payment('0')" id="payment0" class="pricingbtn" 
+                    style="text-decoration: none;margin-top: 5px;margin-bottom: 20px;" >TRY FREE TRIAL
+                     </a><br>
+                    <img src=" p1.png" alt="" width="100" height="155" style="margin-top: 5px;">
+                
+                </div>
+          </div>
+          <div onmouseover="cardHoverFun('1', 'blue')" onmouseleave="cardHoverFun('1', 'black')"  class="card mb-4 shadow-sm" style="background-color: black; border-color: white; border-radius: 10px;border: 4px solid white;">
+                <div class="card-header" id="cardMonthly"  style="border-radius: 9px;">
+                    <table style="width: 100%;border:0;">
+                        <tr>
+                            <td style="padding-right: 0;">
+                                <h4 class="my-0 font-weight-normal" style="font-size: 25px; margin-left:20px;padding-top: 10px;padding-right: 0px;padding-left: 40px;float: right;"><b>699/- </b></h4>
+                            </td>
+                        
+                        <td rowspan="2">
+                            <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;padding-left: 10px;padding-right: 40px;float: left;">MONTHLY</h4>
+
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td style="padding-right: 0;">
+                            <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;padding-right: 0px;padding-left: 40px;float: right;"><strike>1299/-</strike></h4>
+
+                        </td>
+                    </tr>
+                    </table>
+                
+                </div>
+        
+                <div class="card-body" style="padding-bottom: 0px;padding-top: 0;">
+                    <ul class="list-unstyled mt-3 mb-4" style="font-size: small;">
+                        <li style="margin-bottom: 10px;pointer-events: none;">Access to all Videos</li>
+                        <li style="margin-bottom: 10px;pointer-events: none;">Access to all Levels videos</li>
+                        <li style="pointer-events: none;">Access to post your videos as Instructor</li>
+                    </ul>
+                    <a href=""
+                     type="button" onclick="payment(1)" id="payment1" class="pricingbtn"
+                    style="text-decoration: none;margin-top: 15px;margin-bottom: 25px;" >
+                    JOIN NOW </a><br>
+                    <img src=" p2.png" alt="" width="130" height="160" >
+                    </div>
+          </div>
+          <div onmouseover="cardHoverFun('2', 'blue')" onmouseleave="cardHoverFun('2', 'black')" class="card mb-4 shadow-sm" style="background-color: black; border-color:white; border-radius: 10px;border: 4px solid white;">
+            <div class="card-header" style="border-radius: 10px;">
+                <table class="pricingtable" style="width: 100%;border:0;">
+                    <tr>
+                        <td style="padding-right: 0;">
+                            <h4 class="my-0 font-weight-normal"  style="font-size: 25px;margin-left:20px;float: right; padding-top: 10px;padding-right: 0px;padding-left: 40px;"><b>1800/- </b></h4>
+                        </td>
+                    
+                    <td rowspan="2">
+                        <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;float: left;padding-left: 20px;">3 MONTHS</h4>
+
+                    </td>
+                </tr>
+        
+                <tr>
+                    <td style="padding-right: 0;">
+                        <h4 class="my-0 font-weight-normal" style="font-size: 20px; padding-top: 10px;float:right;padding-left: 40px;"><strike>2100/-</strike></h4>
+
+                    </td>
+                </tr>
+                </table>
+            </div>
+           
+            <div class="card-body" style="padding-bottom: 0px;padding-top: 0px;">
+                <ul class="list-unstyled mt-3 mb-4" style="font-size: small;;">
+                    <li style="margin-bottom: 10px;pointer-events: none;">Access to all Videos</li>
+                    <li style="margin-bottom: 10px;pointer-events: none;">Access to all Levels videos</li>
+                    <li style="pointer-events: none;">Access to post your videos as Instructor</li>
+                  </ul>
+                  <a href=""
+                     type="button" onclick="payment(2)" id="payment2" class="pricingbtn"
+                    style="text-decoration: none;margin-top: 15px;margin-bottom: 25px;" >
+                    JOIN NOW </a><br>
+                  <img src=" p3.png" alt="" width="150" height="160" >
+                </div>
+          </div>
+        </div>
+        <br>
+        <br>
+   </div>
+   <br>
+
+    <div class="container" style="margin-left: 150px;">
+        <div class="section-title">
+                <h2 style="font-family:'Montserrat'; padding-left:50px ;">WORKSHOP</h2>
+                <img src="workshop.png" width="600"height="300" style="margin-left:370px;">
+            </div><br><br><br>
+
+
+         
+        <div class="contaier" style="align-items: center;margin-left:90px ;">
+            <table  style="margin-left: 200px; text-align: center; 
+            width:750px; padding-bottom: 80px; border: none ">
+                <tr style="height: 100px;">
+                    <td style="background-color:#1D70EA; font-size: x-large; font-weight: bold;
+                     border-top-left-radius: 10px; border-top-right-radius: 10px;  ">
+                        WE ARE COMING SOON
+                    </td>    
+                </tr>
+                <tr style="height: 100px;">
+                    <td style="background-color:rgb(31,30,30); font-size: large;
+                    border-bottom-left-radius: 10px; border-bottom-right-radius: 10px">
+                        We will be updating you with dates soon. 
+                        <br>
+                        STAY TUNED
+                    </td>    
+                </tr>
+            </table>    
+        </div>        
+
+    </div>   
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="contaier" style="align-items: center; background-color:black;margin-left: 30px;">
+        
+        <table class="footerTab" style="margin-left: 50px; align-items: center; width: 90%; padding-bottom: 80px;">
+            <tr >
+                <td style="font-size: 50px;padding-top: 30px;">DANCE LIKE YOU HAVE <br> NEVER DANCED BEFORE<br><br></td>
+            </tr>  
+            
+            <tr>
+                <td style="padding-top: 50px;"><a href="signup.php" type="button" 
+                    style="background-color:#1D70EA ;border-color: #1D70EA; font-size: large; border-radius: 50px; height: 60px;padding:15px 30px ;color:white;text-decoration: none;" >
+                    TRY 7 DAYS TRIAL</a>
+                    <br>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 40px;">
+                    <img style="padding: 10px;" src="googleplay.png" width="20%" height="78px"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img style="padding: 7px;"  src="appstore.png" width="20%" height="78px"/>
+
+                </td>
+            </tr> 
+        </table>    
+        <br><br><hr style="margin-left:120px; width:82%;"><br><br>
+    </div>    
+    
+    <div class="d-flex flex-row bd-highlight mb-3" style="font-size:17px;font-weight: lighter; background-color: black;" >
+        
+        <div  style="margin-left:150px;">
+            <div class="logo"><img src="logo4.png" alt="logo" height="70px ;" width="150px">
+                <br><br>
+                @Mixture Of Styles Workshop<br><br>
+                All Rights Reserved
+            </div>
+            
+        </div>
+        <div style="margin-top: 70px;margin-left:260px;" >
+            <p>Get latest dance videos Updates</p>
+            <input id="email" type="text" name="lastname"
+                   title="email"
+                   placeholder="Email"><br><br>
+                   
+            <button type="submit" class="btn" style="background-color:#1D70EA ;border-color: #1D70EA;"  >SUBSCRIBE</button><br><br>
+        </div>
+        <div style="margin-top: 70px; margin-left:180px;" >
+            mixtureofstylesworkshopindia@gmail.com
+            <br><br>
+           <p style="float:right"><span style="margin-right:20px;">CONTACT</span>  9765240639</p>
+        </div>
+    </div>
+    
+</body>
+</html>

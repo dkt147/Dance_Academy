@@ -1,0 +1,53 @@
+.container{
+    
+    margin-left: 38%;
+    margin-top: 50px;
+    font-size: small;
+}
+body {
+    background-color: black;
+    color: white;
+    font-family:'Montserrat';
+  }
+  h1,h2,h3,h4,h5,h6{
+      font-family:'Montserrat'; 
+  }
+.bg-dark {
+
+    background-color: black!important;
+}
+.form-control{
+    width:400px;
+    height:40px;
+    background-color:rgb(31,30,30);
+    border-color: rgb(31,30,30);
+    border-radius:0;
+    padding-left: 10px;
+    color: white;
+    
+}
+#login{
+    
+    margin-top: 3px;
+    border-color: white;
+    border-radius:2rem;
+    background-color:black;
+    color:white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right:40px;
+    padding-left: 40px;
+    margin-left: 125px;
+   
+
+}
+#login:hover
+{
+background-image:none;
+background-color:#1D70EA;
+}
+
+.errormessage{
+    color: red;
+    display: none;
+  }
